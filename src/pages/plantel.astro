@@ -1,0 +1,51 @@
+---
+const jugadores = [
+  {
+    nombre: "Facundo Cambeses",
+    numero: 25,
+    posicion: "Arquero",
+    imagen: "https://www.racingclub.com.ar/img/futbol/plantel/1583_cambeses.jpg?v=20260325"
+  },
+  {
+    nombre: "Gabriel Rojas",
+    numero: 27,
+    posicion: "Defensor",
+    imagen: "https://www.racingclub.com.ar/img/futbol/plantel/1398_rojas.jpg?v=20260325"
+  },
+  {
+    nombre: "Adrian Martinez",
+    numero: 9,
+    posicion: "Delantero",
+    imagen: "https://www.racingclub.com.ar/img/futbol/plantel/1586_martinez.jpg?v=20260325"
+  }
+];
+---
+
+<h1>Plantel actual</h1>
+
+<section class="jugadores">
+{
+  jugadores.map(jugador => (
+    <div class="card">
+      <img src={jugador.imagen} />
+      <h3>{jugador.nombre}</h3>
+      <p>{jugador.posicion}</p>
+    </div>
+  ))
+}
+</section>
+
+<style>
+.jugadores{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:#009ddd;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+</style>
